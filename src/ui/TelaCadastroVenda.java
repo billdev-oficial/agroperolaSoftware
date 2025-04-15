@@ -1,5 +1,6 @@
 package ui;
 
+import com.formdev.flatlaf.FlatDarkLaf;
 import dao.PessoaDAO;
 import dao.VendaDAO;
 import model.Pessoa;
@@ -13,6 +14,13 @@ import java.util.List;
 public class TelaCadastroVenda extends JFrame {
 
     public TelaCadastroVenda() {
+        // Aplicando FlatLaf
+        try {
+            UIManager.setLookAndFeel(new FlatDarkLaf());
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
+
         setTitle("Registrar Venda");
         setSize(400, 250);
         setLocationRelativeTo(null);

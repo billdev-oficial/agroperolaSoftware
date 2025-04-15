@@ -1,14 +1,23 @@
 package ui;
 
+import com.formdev.flatlaf.FlatDarkLaf;  // Importando o tema FlatLaf
+
 import javax.swing.*;
 import java.awt.*;
 
 public class TelaPrincipal extends JFrame {
 
     public TelaPrincipal() {
+        // Aplicando o FlatDarkLaf
+        try {
+            UIManager.setLookAndFeel(new FlatDarkLaf());
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
+
         setTitle("Sistema de Vendas Fiado");
         setSize(400, 300);
-        setLocationRelativeTo(null); // centraliza
+        setLocationRelativeTo(null); // Centraliza
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         // Botões principais
