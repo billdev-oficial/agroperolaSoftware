@@ -1,6 +1,7 @@
 package view;
 
 import dao.UsuarioDAO;
+import ui.TelaPrincipal;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,8 +13,8 @@ public class TelaLogin extends JFrame {
 
     public TelaLogin() {
         setTitle("Login");
-        setSize(320, 180);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(320, 180);
         setLocationRelativeTo(null);
 
         JPanel painel = new JPanel(new GridLayout(3, 2, 5, 5));
@@ -29,15 +30,17 @@ public class TelaLogin extends JFrame {
         btnEntrar.addActionListener(e -> {
             String user = campoUsuario.getText().trim();
             String pass = new String(campoSenha.getPassword());
-
             if (new UsuarioDAO().autenticar(user, pass)) {
                 JOptionPane.showMessageDialog(this, "Login efetuado!");
                 dispose();
-                // **chama a tela principal**
-                new ui.TelaPrincipal();
+                new TelaPrincipal();
             } else {
-                JOptionPane.showMessageDialog(this, "Usuário ou senha inválidos",
-                        "Erro", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(
+                        this,
+                        "Usuário ou senha inválidos!",
+                        "Erro",
+                        JOptionPane.ERROR_MESSAGE
+                );
             }
         });
 

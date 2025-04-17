@@ -19,8 +19,4 @@ public class Usuario {
     public int getId() { return id; }
     public String getUsuario() { return usuario; }
     public String getSenha() { return senha; }
-
-    public void setId(int id) { this.id = id; }
-    public void setUsuario(String usuario) { this.usuario = usuario; }
-    public void setSenha(String senha) { this.senha = senha; }
 }
