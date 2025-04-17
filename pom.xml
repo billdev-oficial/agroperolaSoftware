@@ -29,4 +29,15 @@
             <version>3.43.2.0</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>versao.txt</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
 </project>
